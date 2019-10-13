@@ -9,6 +9,14 @@ module.exports = function getTimeForEducation(
     knowsProgramming = true,
     config = {family: 4}
     ) {
-      return 0;
+    	let hoursForElementary = 500;
+    	let hoursForJS = 800;
+
+    	let hoursTotal = 800;
+    	if (!knowsProgramming)
+    		hoursTotal += hoursForElementary;
+
+    	let hoursToSpendPerWeek = config[focus];
+
+    	return Math.ceil(hoursTotal / hoursToSpendPerWeek);
   };
-  
